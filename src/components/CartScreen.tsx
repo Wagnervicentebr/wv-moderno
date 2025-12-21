@@ -12,15 +12,15 @@ export function CartScreen() {
   const [orderId, setOrderId] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'pix'>('card');
   const [formData, setFormData] = useState({
-    name: '',
-    cpf: '',
-    email: '',
-    cep: '',
-    address: '',
-    number: '',
-    complement: '',
-    city: '',
-    state: '',
+    name: 'João Silva',
+    cpf: '123.456.789-10',
+    email: 'joao@example.com',
+    cep: '01310-100',
+    address: 'Avenida Paulista',
+    number: '1000',
+    complement: 'Apto 1501',
+    city: 'São Paulo',
+    state: 'SP',
   });
 
   // Scroll to top whenever the checkout step changes

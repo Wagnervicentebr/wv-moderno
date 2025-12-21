@@ -20,7 +20,7 @@ const WALTER_LEAL_PROFESSIONAL = {
   id: 'walter',
   name: 'Walter Leal',
   specialties: ['Coloração', 'Cortes Premium', 'Tratamentos'],
-  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MXx8fHwxNzM0NzE5NjQzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+  image: 'https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/walter.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vd2FsdGVyLnBuZyIsImlhdCI6MTc2NjMyODEwNiwiZXhwIjoxNzY4OTIwMTA2fQ.XkDtS8o5COB442-LfKzcxEPpBc8dW2tuu-49jWgA-6w',
   services: [], // Atende todos os serviços
 };
 
