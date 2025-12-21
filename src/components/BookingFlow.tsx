@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight, Clock, DollarSign, Check, Calendar as CalendarIcon, CreditCard } from 'lucide-react';
 import { services, generateTimeSlots, Service, TimeSlot } from '../data/mockData';
 import { useBooking } from '../contexts/BookingContext';
@@ -33,6 +33,11 @@ export function BookingFlow({ onNavigate }: BookingFlowProps) {
   const [processing, setProcessing] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const { addBooking } = useBooking();
+
+  // Scroll to top whenever the booking step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
 
   // Categories for filtering
   const categories = ['all', 'masculino', 'feminino', 'manicure', 'maquiagem'];

@@ -12,7 +12,7 @@
     --color-text-primary: 0 0 0; /* Black */
     --color-text-secondary: 115 115 115; /* Gray */
     --color-text-muted: 26 26 26; /* Dark Charcoal */
-    --color-accent: 212 197 176; /* Champagne Gold */
+    --color-accent: 212 197 176 !important; /* Champagne Gold */
     --color-luxury: 212 197 176; /* Champagne Gold */
     --color-dark-bg: 20 25 23; /* Dark Green/Black */
     --color-success: 168 148 128; /* Muted Gold */

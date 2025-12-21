@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { CartProvider, useCart } from './contexts/CartContext';
 import { BookingProvider } from './contexts/BookingContext';
@@ -19,6 +19,11 @@ function AppContent() {
   const { itemCount } = useCart();
   const [currentView, setCurrentView] = useState<View>('home');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Scroll to top whenever the view changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentView]);
 
   const handleSignOut = async () => {
     setIsAuthenticated(false);

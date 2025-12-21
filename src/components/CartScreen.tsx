@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingCart, Trash2, Plus, Minus, ArrowRight, CreditCard, MapPin, Package, CheckCircle } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import { useOrder } from '../contexts/OrderContext';
@@ -22,6 +22,11 @@ export function CartScreen() {
     city: '',
     state: '',
   });
+
+  // Scroll to top whenever the checkout step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
 
   const formatPrice = (price: number) => {
     if (price === undefined || price === null || isNaN(price)) {
