@@ -30,6 +30,12 @@ function AppContent() {
     setCurrentView('home');
   };
 
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true);
+    // Scroll to top after successful login
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
@@ -42,7 +48,7 @@ function AppContent() {
   }
 
   if (!user && !isAuthenticated) {
-    return <LoginScreen onSuccess={() => setIsAuthenticated(true)} />;
+    return <LoginScreen onSuccess={handleLoginSuccess} />;
   }
 
   return (

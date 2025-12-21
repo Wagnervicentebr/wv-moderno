@@ -36,15 +36,7 @@ export interface TimeSlot {
 
 export const services: Service[] = [
   // MASCULINO
-  {
-    id: 'm1',
-    name: 'Design de Sobrancelha Masculina',
-    description: 'Design profissional e natural de sobrancelhas masculinas',
-    duration: 30,
-    price: 250,
-    category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/corte-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vY29ydGUtbWFzY3VsaW5vLnBuZyIsImlhdCI6MTc2NjMxNjczMywiZXhwIjoxNzY4OTA4NzMzfQ.njs7lr8Gd-FJnlPSI7cvX6fjeDaHLQfNbJ84XDAVNs0",
-  },
+  
   {
     id: 'm2',
     name: 'Barba Completa',
@@ -53,6 +45,15 @@ export const services: Service[] = [
     price: 400,
     category: 'masculino',
     image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/barba.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vYmFyYmEucG5nIiwiaWF0IjoxNzY2MzE2NjgwLCJleHAiOjE3Njg5MDg2ODB9.2_JJSRiy6sk2wn7cviU4uWnE_D9wgluP4t-2tsYlMYM",
+  },
+  {
+    id: 'm5',
+    name: 'Consultoria Visagista',
+    description: 'Corte de cabelo masculino com acabamento premium e finalização personalizada',
+    duration: 60,
+    price: 800,
+    category: 'masculino',
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/Visagismo-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vVmlzYWdpc21vLW1hc2N1bGluby5wbmciLCJpYXQiOjE3NjYzMjQ3NjMsImV4cCI6MTc2ODkxNjc2M30.3ITsIoM5nh9I5xYYbNeHCLFUeCtaV54f_04YfTqSSrE",
   },
   {
     id: 'm3',
@@ -73,14 +74,15 @@ export const services: Service[] = [
     image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/hidratacao-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vaGlkcmF0YWNhby1tYXNjdWxpbm8ucG5nIiwiaWF0IjoxNzY2MzE2NzExLCJleHAiOjE3Njg5MDg3MTF9.Op_fUewMYacmN2mW7_sUIhXfu35aEKcokChEO-R1ul4",
   },
   {
-    id: 'm5',
-    name: 'Consultoria Visagista',
-    description: 'Corte de cabelo masculino com acabamento premium e finalização personalizada',
-    duration: 60,
-    price: 800,
+    id: 'm1',
+    name: 'Design de Sobrancelha Masculina',
+    description: 'Design profissional e natural de sobrancelhas masculinas',
+    duration: 30,
+    price: 250,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/Visagismo-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vVmlzYWdpc21vLW1hc2N1bGluby5wbmciLCJpYXQiOjE3NjYzMjQ3NjMsImV4cCI6MTc2ODkxNjc2M30.3ITsIoM5nh9I5xYYbNeHCLFUeCtaV54f_04YfTqSSrE",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/corte-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vY29ydGUtbWFzY3VsaW5vLnBuZyIsImlhdCI6MTc2NjMxNjczMywiZXhwIjoxNzY4OTA4NzMzfQ.njs7lr8Gd-FJnlPSI7cvX6fjeDaHLQfNbJ84XDAVNs0",
   },
+  
 
   // FEMININO
   {

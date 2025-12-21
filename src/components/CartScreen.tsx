@@ -190,53 +190,69 @@ export function CartScreen() {
       <div className="min-h-screen pt-14 pb-20 md:pt-20 md:pb-8 bg-[#F5F5F5]">
         <div className="max-w-2xl mx-auto px-4 py-4 md:px-6 md:py-8">
           {/* Header */}
-          <div className="mb-6">
+          <div className="mb-8">
             <div className="flex items-center gap-2 md:gap-3 mb-2">
               <MapPin className="w-5 h-5 md:w-8 md:h-8" />
-              <h1 className="text-xl md:text-4xl">Endereço de Entrega</h1>
+              <h1 className="text-2xl md:text-4xl">Endereço de Entrega</h1>
             </div>
+            <p className="text-sm md:text-base text-[rgb(var(--color-text-secondary))] pl-9 md:pl-11 mt-2">
+              Preencha seus dados para continuar o pedido
+            </p>
           </div>
 
-          <form onSubmit={handleConfirmAddress} className="space-y-4 md:space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              <div className="md:col-span-2">
-                <label className="block text-xs md:text-sm mb-2 font-medium">Nome Completo *</label>
+          <form onSubmit={handleConfirmAddress} className="card p-6 md:p-8 mb-6">
+            <div className="space-y-5 md:space-y-6">
+              {/* Full Name */}
+              <div>
+                <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                  Nome Completo <span className="text-red-600">*</span>
+                </label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="input-primary text-sm md:text-base"
-                  placeholder="Seu nome"
+                  placeholder="Seu nome completo"
                 />
               </div>
 
+              {/* CPF and Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                    CPF <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.cpf}
+                    onChange={(e) => setFormData({ ...formData, cpf: e.target.value })}
+                    className="input-primary text-sm md:text-base"
+                    placeholder="000.000.000-00"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                    E-mail <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="input-primary text-sm md:text-base"
+                    placeholder="seu@email.com"
+                  />
+                </div>
+              </div>
+
+              {/* CEP */}
               <div>
-                <label className="block text-xs md:text-sm mb-2 font-medium">CPF *</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.cpf}
-                  onChange={(e) => setFormData({ ...formData, cpf: e.target.value })}
-                  className="input-primary text-sm md:text-base"
-                  placeholder="000.000.000-00"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs md:text-sm mb-2 font-medium">E-mail *</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="input-primary text-sm md:text-base"
-                  placeholder="seu@email.com"
-                />
-              </div>
-
-              <div className="md:col-span-1">
-                <label className="block text-xs md:text-sm mb-2 font-medium">CEP *</label>
+                <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                  CEP <span className="text-red-600">*</span>
+                </label>
                 <input
                   type="text"
                   required
@@ -247,84 +263,104 @@ export function CartScreen() {
                 />
               </div>
 
-              <div className="md:col-span-2">
-                <label className="block text-xs md:text-sm mb-2 font-medium">Endereço *</label>
+              {/* Address */}
+              <div>
+                <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                  Endereço <span className="text-red-600">*</span>
+                </label>
                 <input
                   type="text"
                   required
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   className="input-primary text-sm md:text-base"
-                  placeholder="Rua, Avenida..."
+                  placeholder="Rua, Avenida, Alameda..."
                 />
               </div>
 
-              <div>
-                <label className="block text-xs md:text-sm mb-2 font-medium">Número *</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.number}
-                  onChange={(e) => setFormData({ ...formData, number: e.target.value })}
-                  className="input-primary text-sm md:text-base"
-                  placeholder="123"
-                />
+              {/* Number and Complement */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                    Número <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.number}
+                    onChange={(e) => setFormData({ ...formData, number: e.target.value })}
+                    className="input-primary text-sm md:text-base"
+                    placeholder="123"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                    Complemento
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.complement}
+                    onChange={(e) => setFormData({ ...formData, complement: e.target.value })}
+                    className="input-primary text-sm md:text-base"
+                    placeholder="Apto, bloco, sala..."
+                  />
+                </div>
               </div>
 
-              <div>
-                <label className="block text-xs md:text-sm mb-2 font-medium">Complemento</label>
-                <input
-                  type="text"
-                  value={formData.complement}
-                  onChange={(e) => setFormData({ ...formData, complement: e.target.value })}
-                  className="input-primary text-sm md:text-base"
-                  placeholder="Apto, bloco..."
-                />
-              </div>
+              {/* City and State */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                    Cidade <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.city}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                    className="input-primary text-sm md:text-base"
+                    placeholder="São Paulo"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-xs md:text-sm mb-2 font-medium">Cidade *</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.city}
-                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="input-primary text-sm md:text-base"
-                  placeholder="São Paulo"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs md:text-sm mb-2 font-medium">Estado *</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.state}
-                  onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                  className="input-primary text-sm md:text-base uppercase"
-                  placeholder="SP"
-                  maxLength={2}
-                />
-              </div>
-            </div>
-
-            {/* Sticky buttons on mobile */}
-            <div className="sticky bottom-20 md:static pt-4">
-              <div className="flex gap-3 md:gap-4">
-                <button
-                  type="button"
-                  onClick={() => setStep('cart')}
-                  className="btn-secondary flex-1 text-sm md:text-base py-3 md:py-4"
-                >
-                  Voltar
-                </button>
-                <button type="submit" className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm md:text-base py-3 md:py-4">
-                  Continuar
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-                </button>
+                <div>
+                  <label className="block text-sm md:text-base mb-2 font-medium text-[rgb(var(--color-text-primary))]">
+                    Estado <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.state}
+                    onChange={(e) => setFormData({ ...formData, state: e.target.value })}
+                    className="input-primary text-sm md:text-base uppercase"
+                    placeholder="SP"
+                    maxLength={2}
+                  />
+                </div>
               </div>
             </div>
           </form>
+
+          {/* Sticky buttons on mobile */}
+          <div className="bottom-20 md:static">
+            <div className="flex gap-3 md:gap-4">
+              <button
+                type="button"
+                onClick={() => setStep('cart')}
+                className="btn-secondary flex-1 text-sm md:text-base py-3 md:py-4 rounded-xl"
+              >
+                Voltar
+              </button>
+              <button 
+                onClick={handleConfirmAddress}
+                className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm md:text-base py-3 md:py-4 rounded-xl"
+              >
+                Continuar
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -336,78 +372,113 @@ export function CartScreen() {
       <div className="min-h-screen pt-14 pb-20 md:pt-20 md:pb-8 bg-[#F5F5F5]">
         <div className="max-w-2xl mx-auto px-4 py-4 md:px-6 md:py-8">
           {/* Header */}
-          <div className="mb-6">
+          <div className="mb-8">
             <div className="flex items-center gap-2 md:gap-3 mb-2">
               <CreditCard className="w-5 h-5 md:w-8 md:h-8" />
-              <h1 className="text-xl md:text-4xl">Pagamento</h1>
+              <h1 className="text-2xl md:text-4xl">Pagamento</h1>
             </div>
+            <p className="text-sm md:text-base text-[rgb(var(--color-text-secondary))] pl-9 md:pl-11 mt-2">
+              Escolha seu método de pagamento
+            </p>
           </div>
 
           {/* Order Summary */}
-          <div className="card p-4 md:p-6 mb-4 md:mb-8">
-            <h3 className="text-base md:text-xl mb-3 md:mb-4 font-semibold">Resumo do Pedido</h3>
-            <div className="space-y-2 mb-3 md:mb-4">
+          <div className="card p-6 md:p-8 mb-8">
+            <h3 className="text-lg md:text-xl mb-4 md:mb-5 font-semibold">Resumo do Pedido</h3>
+            <div className="space-y-3 mb-4 md:mb-5">
               {items.map((item) => (
-                <div key={item.id} className="flex justify-between text-xs md:text-sm">
-                  <span className="line-clamp-1 flex-1 mr-2">
+                <div key={item.id} className="flex justify-between text-sm md:text-base">
+                  <span className="line-clamp-1 flex-1 mr-2 text-[rgb(var(--color-text-primary))]">
                     {item.quantity}x {item.name}
                   </span>
-                  <span className="font-medium flex-shrink-0">{formatPrice(item.price * item.quantity)}</span>
+                  <span className="font-medium text-[rgb(var(--color-text-primary))] flex-shrink-0">{formatPrice(item.price * item.quantity)}</span>
                 </div>
               ))}
             </div>
-            <div className="h-px bg-black/10 my-3"></div>
-            <div className="flex justify-between text-base md:text-xl font-semibold">
+            <div className="h-px bg-black/10 my-4"></div>
+            <div className="flex justify-between text-lg md:text-xl font-semibold">
               <span>Total</span>
-              <span>{formatPrice(finalTotal)}</span>
+              <span className="text-[rgb(var(--color-accent))]">{formatPrice(finalTotal)}</span>
             </div>
           </div>
 
           {/* Payment Methods */}
-          <div className="space-y-3 md:space-y-4 mb-4 md:mb-8">
-            <button
-              onClick={() => setPaymentMethod('card')}
-              className={`card-hover w-full text-left p-4 md:p-6 touch-manipulation ${
-                paymentMethod === 'card' ? 'ring-2 ring-black' : ''
-              }`}
-            >
-              <div className="flex items-center gap-3 md:gap-4">
-                <CreditCard className="w-5 h-5 md:w-6 md:h-6" />
-                <div>
-                  <div className="text-base md:text-lg mb-0.5 md:mb-1 font-medium">Cartão de Crédito</div>
-                  <div className="text-xs md:text-sm text-[rgb(var(--color-text-secondary))]">
-                    Visa, Mastercard, Elo
+          <div className="mb-8">
+            <h3 className="text-sm md:text-base font-semibold mb-4 text-[rgb(var(--color-text-primary))]">
+              Método de Pagamento
+            </h3>
+            <div className="space-y-3 md:space-y-4">
+              <button
+                onClick={() => setPaymentMethod('card')}
+                className={`card-hover w-full text-left p-5 md:p-6 touch-manipulation transition-all ${
+                  paymentMethod === 'card' ? 'ring-2 ring-[rgb(var(--color-accent))] bg-[rgb(var(--color-tertiary))]/30' : 'hover:bg-[#F5F5F5]'
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <div className={`w-6 h-6 md:w-7 md:h-7 rounded-full border-2 flex items-center justify-center transition-colors ${
+                    paymentMethod === 'card' 
+                      ? 'border-[rgb(var(--color-accent))]' 
+                      : 'border-black/30'
+                  }`}>
+                    {paymentMethod === 'card' && (
+                      <div className="w-3 h-3 bg-[rgb(var(--color-accent))] rounded-full"></div>
+                    )}
                   </div>
+                  <div className="flex-1">
+                    <div className="text-base md:text-lg font-semibold text-[rgb(var(--color-text-primary))]">
+                      Cartão de Crédito
+                    </div>
+                    <div className="text-sm md:text-base text-[rgb(var(--color-text-secondary))] mt-0.5">
+                      Visa, Mastercard, Elo
+                    </div>
+                  </div>
+                  <CreditCard className="w-5 h-5 md:w-6 md:h-6 text-[rgb(var(--color-accent))]" />
                 </div>
-              </div>
-            </button>
+              </button>
 
-            <button
-              onClick={() => setPaymentMethod('pix')}
-              className={`card-hover w-full text-left p-4 md:p-6 touch-manipulation ${
-                paymentMethod === 'pix' ? 'ring-2 ring-black' : ''
-              }`}
-            >
-              <div className="flex items-center gap-3 md:gap-4">
-                <div className="w-5 h-5 md:w-6 md:h-6 bg-black text-white rounded flex items-center justify-center text-[10px] md:text-xs font-bold">
-                  PIX
-                </div>
-                <div>
-                  <div className="text-base md:text-lg mb-0.5 md:mb-1 font-medium">PIX</div>
-                  <div className="text-xs md:text-sm text-[rgb(var(--color-text-secondary))]">
-                    Aprovação instantânea
+              <button
+                onClick={() => setPaymentMethod('pix')}
+                className={`card-hover w-full text-left p-5 md:p-6 touch-manipulation transition-all ${
+                  paymentMethod === 'pix' ? 'ring-2 ring-[rgb(var(--color-accent))] bg-[rgb(var(--color-tertiary))]/30' : 'hover:bg-[#F5F5F5]'
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <div className={`w-6 h-6 md:w-7 md:h-7 rounded-full border-2 flex items-center justify-center transition-colors ${
+                    paymentMethod === 'pix' 
+                      ? 'border-[rgb(var(--color-accent))]' 
+                      : 'border-black/30'
+                  }`}>
+                    {paymentMethod === 'pix' && (
+                      <div className="w-3 h-3 bg-[rgb(var(--color-accent))] rounded-full"></div>
+                    )}
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-base md:text-lg font-semibold text-[rgb(var(--color-text-primary))]">
+                      PIX
+                    </div>
+                    <div className="text-sm md:text-base text-[rgb(var(--color-text-secondary))] mt-0.5">
+                      Aprovação instantânea, seguro e rápido
+                    </div>
+                  </div>
+                  <div className="w-5 h-5 md:w-6 md:h-6 bg-black text-white rounded flex items-center justify-center text-[10px] md:text-xs font-bold">
+                    PIX
                   </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
 
-          <div className="card bg-[rgb(var(--color-luxury))] p-3 md:p-4 mb-4 md:mb-6 text-xs md:text-sm">
-            💡 Modo demonstração: O pagamento será simulado
+          <div className="card bg-gradient-to-r from-[rgb(var(--color-luxury))]/10 to-[rgb(var(--color-accent))]/10 border border-[rgb(var(--color-accent))]/30 p-4 md:p-5 mb-8 text-sm md:text-base">
+            <span className="font-medium text-[rgb(var(--color-text-primary))]">
+              💡 Modo demonstração:
+            </span>
+            <span className="text-[rgb(var(--color-text-secondary))] ml-2">
+              O pagamento será simulado para fins de teste
+            </span>
           </div>
 
           {/* Sticky buttons on mobile */}
-          <div className="sticky bottom-20 md:static">
+          <div className="md:static">
             <div className="flex gap-3 md:gap-4">
               <button
                 onClick={() => setStep('address')}
