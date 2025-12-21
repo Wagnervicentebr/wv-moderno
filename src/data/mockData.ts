@@ -79,7 +79,7 @@ export const services: Service[] = [
     duration: 60,
     price: 800,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/Visagismo-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vVmlzYWdpc21vLW1hc2N1bGluby5wbmciLCJpYXQiOjE3NjYzMTY2NjgsImV4cCI6MTc2ODkwODY2OH0._0A11OkjLJ8d1sE2RArO2t1Sh0BZE_yWE9a2q9aPgBE",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/Visagismo-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vVmlzYWdpc21vLW1hc2N1bGluby5wbmciLCJpYXQiOjE3NjYzMjQ3NjMsImV4cCI6MTc2ODkxNjc2M30.3ITsIoM5nh9I5xYYbNeHCLFUeCtaV54f_04YfTqSSrE",
   },
 
   // FEMININO
