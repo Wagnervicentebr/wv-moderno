@@ -378,3 +378,82 @@ export function generateTimeSlots(date: Date): TimeSlot[] {
   }
   return slots;
 }
+
+// Admin Dashboard - Revenue Data
+export interface MonthlyRevenueData {
+  day: number;
+  revenue: number;
+  previousMonthRevenue?: number;
+}
+
+export interface AnnualRevenueData {
+  month: string;
+  revenue: number;
+}
+
+export interface HourlyRevenueData {
+  hour: string;
+  revenue: number;
+}
+
+// Generate monthly revenue data (current month vs previous month)
+export function getMonthlyRevenueData(): MonthlyRevenueData[] {
+  const now = new Date();
+  const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  
+  const data: MonthlyRevenueData[] = [];
+  for (let day = 1; day <= daysInMonth; day++) {
+    // Realistic revenue pattern - lower on weekdays, higher on weekends
+    const dayOfWeek = new Date(now.getFullYear(), now.getMonth(), day).getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    
+    const baseRevenue = isWeekend ? 2500 : 1800;
+    const variation = Math.random() * 1000 - 500;
+    const revenue = Math.max(500, baseRevenue + variation);
+    
+    // Previous month comparison
+    const prevMonthBaseRevenue = isWeekend ? 2300 : 1700;
+    const prevMonthVariation = Math.random() * 900 - 450;
+    const previousMonthRevenue = Math.max(500, prevMonthBaseRevenue + prevMonthVariation);
+    
+    data.push({
+      day,
+      revenue: Math.round(revenue),
+      previousMonthRevenue: Math.round(previousMonthRevenue),
+    });
+  }
+  return data;
+}
+
+// Get annual revenue data (last 12 months)
+export function getAnnualRevenueData(): AnnualRevenueData[] {
+  const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+  const baseValues = [45000, 48000, 52000, 50000, 55000, 58000, 62000, 60000, 65000, 68000, 72000, 78000];
+  
+  return months.map((month, index) => ({
+    month,
+    revenue: baseValues[index] + (Math.random() * 8000 - 4000),
+  }));
+}
+
+// Get hourly revenue data (9:00 to 19:00)
+export function getHourlyRevenueData(): HourlyRevenueData[] {
+  const hours = [];
+  const peakHours = [11, 15, 18]; // 11:00, 15:00, 18:00 are peak hours
+  
+  for (let hour = 9; hour < 20; hour++) {
+    const hourStr = `${hour.toString().padStart(2, '0')}:00`;
+    const isPeakHour = peakHours.includes(hour);
+    
+    // Peak hours have higher revenue
+    const baseRevenue = isPeakHour ? 800 : 400;
+    const variation = Math.random() * 300 - 150;
+    const revenue = Math.max(100, baseRevenue + variation);
+    
+    hours.push({
+      hour: hourStr,
+      revenue: Math.round(revenue),
+    });
+  }
+  return hours;
+}

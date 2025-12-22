@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { User, ShoppingCart, ShoppingBag, Calendar, ArrowRight, Trash2, CreditCard, MapPin, Package, ArrowLeft, Minus, Plus } from 'lucide-react';
+import { User, ShoppingCart, ShoppingBag, Calendar, ArrowRight, Trash2, CreditCard, MapPin, Package, ArrowLeft, Minus, Plus, Settings } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
 import { useBooking } from '../contexts/BookingContext';
 import { useOrder } from '../contexts/OrderContext';
+import { useAdmin } from '../contexts/AdminContext';
+import { Switch } from './ui/switch';
 
 type ProfileView = 'main' | 'cart' | 'checkout' | 'bookings' | 'orders';
 
@@ -16,6 +18,7 @@ export function ProfileScreen({ onSignOut }: ProfileScreenProps) {
   const { items, removeItem, updateQuantity, clearCart, total } = useCart();
   const { bookings } = useBooking();
   const { orders } = useOrder();
+  const { isAdminMode, toggleAdminMode } = useAdmin();
   const [view, setView] = useState<ProfileView>('main');
 
   const handleSignOut = async () => {
@@ -122,6 +125,26 @@ export function ProfileScreen({ onSignOut }: ProfileScreenProps) {
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
             </div>
           </button>
+
+          {/* Admin Mode Toggle */}
+          <div className="card p-4 md:p-6 mb-6 md:mb-8">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
+                <Settings className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base md:text-xl mb-0.5 md:mb-1 font-medium">Modo Admin</h3>
+                  <p className="text-xs md:text-sm text-[rgb(var(--color-text-secondary))]">
+                    Acesso ao painel de gestão
+                  </p>
+                </div>
+              </div>
+              <Switch
+                checked={isAdminMode}
+                onCheckedChange={toggleAdminMode}
+                aria-label="Ativar modo admin"
+              />
+            </div>
+          </div>
 
           {/* Menu Options */}
           <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">

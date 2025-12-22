@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { CartProvider, useCart } from './contexts/CartContext';
 import { BookingProvider } from './contexts/BookingContext';
 import { OrderProvider } from './contexts/OrderContext';
+import { AdminProvider } from './contexts/AdminContext';
 import { LoginScreen } from './components/LoginScreen';
 import { Navigation } from './components/Navigation';
 import { HomeScreen } from './components/HomeScreen';
@@ -10,9 +11,10 @@ import { BookingFlow } from './components/BookingFlow';
 import { ProductsScreen } from './components/ProductsScreen';
 import { CartScreen } from './components/CartScreen';
 import { ProfileScreen } from './components/ProfileScreen';
+import { AdminScreen } from './components/AdminScreen';
 import './styles/globals.css';
 
-type View = 'home' | 'booking' | 'products' | 'cart' | 'profile';
+type View = 'home' | 'booking' | 'products' | 'cart' | 'profile' | 'admin';
 
 function AppContent() {
   const { user, loading } = useAuth();
@@ -60,6 +62,7 @@ function AppContent() {
       {currentView === 'products' && <ProductsScreen />}
       {currentView === 'cart' && <CartScreen />}
       {currentView === 'profile' && <ProfileScreen onSignOut={handleSignOut} />}
+      {currentView === 'admin' && <AdminScreen onNavigate={setCurrentView} />}
     </>
   );
 }
@@ -67,13 +70,15 @@ function AppContent() {
 export default function App() {
   return (
     <AuthProvider>
-      <BookingProvider>
-        <OrderProvider>
-          <CartProvider>
-            <AppContent />
-          </CartProvider>
-        </OrderProvider>
-      </BookingProvider>
+      <AdminProvider>
+        <BookingProvider>
+          <OrderProvider>
+            <CartProvider>
+              <AppContent />
+            </CartProvider>
+          </OrderProvider>
+        </BookingProvider>
+      </AdminProvider>
     </AuthProvider>
   );
 }
