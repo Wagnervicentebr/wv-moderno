@@ -42,7 +42,7 @@ export function Navigation({ currentView, onNavigate, itemCount }: NavigationPro
 
       {/* Mobile Bottom Navigation */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-black/5 z-50 safe-area-bottom">
-        <div className="grid grid-cols-4 h-16">
+        <div className={`grid h-16 ${isAdminMode ? 'grid-cols-5' : 'grid-cols-4'}`}>
           <button
             onClick={() => onNavigate('home')}
             className={`flex flex-col items-center justify-center gap-1 transition-colors ${

@@ -384,11 +384,11 @@ export function ProfileScreen({ onSignOut }: ProfileScreenProps) {
                     <h3 className="text-base md:text-xl font-semibold line-clamp-2 flex-1">{booking.service.name}</h3>
                     <div className={`text-[10px] md:text-sm px-2 md:px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0 ${
                       booking.status === 'confirmed' ? 'bg-green-100 text-green-800' :
-                      booking.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                      booking.status === 'completed' ? 'bg-blue-100 text-blue-800' :
                       'bg-red-100 text-red-800'
                     }`}>
                       {booking.status === 'confirmed' ? 'Confirmado' :
-                       booking.status === 'pending' ? 'Pendente' : 'Cancelado'}
+                       booking.status === 'completed' ? 'Concluído' : 'Cancelado'}
                     </div>
                   </div>
 
@@ -469,7 +469,7 @@ export function ProfileScreen({ onSignOut }: ProfileScreenProps) {
                   {/* Data do pedido */}
                   <div className="flex items-center gap-2 text-xs md:text-sm text-[rgb(var(--color-text-secondary))] mb-3">
                     <Calendar className="w-3 h-3 md:w-4 md:h-4" />
-                    <span>{formatDate(order.date)}</span>
+                    <span>{formatDate(order.createdAt)}</span>
                   </div>
 
                   {/* Lista de itens */}

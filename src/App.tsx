@@ -12,7 +12,6 @@ import { ProductsScreen } from './components/ProductsScreen';
 import { CartScreen } from './components/CartScreen';
 import { ProfileScreen } from './components/ProfileScreen';
 import { AdminScreen } from './components/AdminScreen';
-import './styles/globals.css';
 
 type View = 'home' | 'booking' | 'products' | 'cart' | 'profile' | 'admin';
 
