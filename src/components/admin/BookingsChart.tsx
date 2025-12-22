@@ -71,11 +71,11 @@ export function BookingsChart() {
       </div>
 
       {/* Gráfico Combinado - Agendamentos e Realizados */}
-      <div className="w-full h-80 md:h-96 mb-8">
+      <div className="w-full mb-8" style={{ height: '400px', minHeight: '400px' }}>
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
             data={data}
-            margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
+            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.1)" />
             <XAxis

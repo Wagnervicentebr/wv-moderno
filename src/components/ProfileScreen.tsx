@@ -130,11 +130,13 @@ export function ProfileScreen({ onSignOut }: ProfileScreenProps) {
           <div className="card p-4 md:p-6 mb-6 md:mb-8">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
-                <Settings className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0" />
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg flex-shrink-0">
+                  <Settings className="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-300" />
+                </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-base md:text-xl mb-0.5 md:mb-1 font-medium">Modo Admin</h3>
                   <p className="text-xs md:text-sm text-[rgb(var(--color-text-secondary))]">
-                    Acesso ao painel de gestão
+                    {isAdminMode ? 'Painel de gestão ativado' : 'Ative para acessar o painel de gestão'}
                   </p>
                 </div>
               </div>
@@ -142,6 +144,7 @@ export function ProfileScreen({ onSignOut }: ProfileScreenProps) {
                 checked={isAdminMode}
                 onCheckedChange={toggleAdminMode}
                 aria-label="Ativar modo admin"
+                className="flex-shrink-0"
               />
             </div>
           </div>

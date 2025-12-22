@@ -83,11 +83,11 @@ export function MonthlyRevenueChart() {
       </div>
 
       {/* Gráfico */}
-      <div className="w-full h-80 md:h-96">
+      <div className="w-full" style={{ height: '400px', minHeight: '400px' }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
-            margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
+            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.1)" />
             <XAxis

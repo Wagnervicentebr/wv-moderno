@@ -74,11 +74,11 @@ export function ProductSalesChart() {
       {/* Gráfico de Barras - Vendas */}
       <div className="mb-8">
         <h4 className="text-sm md:text-base font-semibold mb-4">Unidades Vendidas</h4>
-        <div className="w-full h-80 md:h-96">
+        <div className="w-full" style={{ height: '400px', minHeight: '400px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
-              margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
+              margin={{ top: 20, right: 30, left: 20, bottom: 100 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.1)" />
               <XAxis
@@ -119,11 +119,11 @@ export function ProductSalesChart() {
       {/* Gráfico de Barras - Receita */}
       <div className="mb-8">
         <h4 className="text-sm md:text-base font-semibold mb-4">Receita por Produto</h4>
-        <div className="w-full h-80 md:h-96">
+        <div className="w-full" style={{ height: '400px', minHeight: '400px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
-              margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
+              margin={{ top: 20, right: 30, left: 20, bottom: 100 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.1)" />
               <XAxis
