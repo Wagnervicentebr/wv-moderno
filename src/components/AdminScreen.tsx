@@ -3,13 +3,15 @@ import { ArrowLeft, TrendingUp } from 'lucide-react';
 import { MonthlyRevenueChart } from './admin/MonthlyRevenueChart';
 import { AnnualRevenueChart } from './admin/AnnualRevenueChart';
 import { HourlyRevenueChart } from './admin/HourlyRevenueChart';
+import { ProductSalesChart } from './admin/ProductSalesChart';
+import { BookingsChart } from './admin/BookingsChart';
 
 interface AdminScreenProps {
   onNavigate?: (view: string) => void;
 }
 
 export function AdminScreen({ onNavigate }: AdminScreenProps) {
-  const [activeTab, setActiveTab] = useState<'overview' | 'monthly' | 'annual' | 'hourly'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'revenue' | 'products' | 'bookings'>('overview');
 
   const handleBack = () => {
     if (onNavigate) {
@@ -53,86 +55,103 @@ export function AdminScreen({ onNavigate }: AdminScreenProps) {
               Visão Geral
             </button>
             <button
-              onClick={() => setActiveTab('monthly')}
+              onClick={() => setActiveTab('revenue')}
               className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all font-medium flex-shrink-0 ${
-                activeTab === 'monthly'
+                activeTab === 'revenue'
                   ? 'bg-black text-white dark:bg-white dark:text-black'
                   : 'bg-white text-black dark:bg-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700'
               }`}
             >
-              Mensal
+              Faturamento
             </button>
             <button
-              onClick={() => setActiveTab('annual')}
+              onClick={() => setActiveTab('products')}
               className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all font-medium flex-shrink-0 ${
-                activeTab === 'annual'
+                activeTab === 'products'
                   ? 'bg-black text-white dark:bg-white dark:text-black'
                   : 'bg-white text-black dark:bg-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700'
               }`}
             >
-              Anual
+              Produtos
             </button>
             <button
-              onClick={() => setActiveTab('hourly')}
+              onClick={() => setActiveTab('bookings')}
               className={`px-4 py-2 rounded-lg whitespace-nowrap transition-all font-medium flex-shrink-0 ${
-                activeTab === 'hourly'
+                activeTab === 'bookings'
                   ? 'bg-black text-white dark:bg-white dark:text-black'
                   : 'bg-white text-black dark:bg-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700'
               }`}
             >
-              Por Hora
+              Agendamentos
             </button>
           </div>
         </div>
 
-        {/* Overview Tab */}
+        {/* Overview Tab - Dashboard Principal */}
         {activeTab === 'overview' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
-            {/* Gráfico Mensal */}
-            <div className="md:col-span-3">
+          <div className="space-y-6 md:space-y-8">
+            {/* Top Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-                <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Mensal</h2>
-                <MonthlyRevenueChart />
+                <ProductSalesChart />
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+                <BookingsChart />
               </div>
             </div>
 
-            {/* Gráfico Anual */}
-            <div className="md:col-span-2">
+            {/* Revenue Section */}
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+              <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Mensal</h2>
+              <MonthlyRevenueChart />
+            </div>
+
+            {/* Additional Charts */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Anual</h2>
                 <AnnualRevenueChart />
               </div>
-            </div>
-
-            {/* Gráfico Horário */}
-            <div className="md:col-span-1">
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-                <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Por Hora</h2>
+                <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Receita por Hora</h2>
                 <HourlyRevenueChart />
               </div>
             </div>
           </div>
         )}
 
-        {/* Individual Views */}
-        {activeTab === 'monthly' && (
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-            <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Mensal Detalhado</h2>
-            <MonthlyRevenueChart />
+        {/* Revenue Tab */}
+        {activeTab === 'revenue' && (
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+              <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Mensal Detalhado</h2>
+              <MonthlyRevenueChart />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Anual</h2>
+                <AnnualRevenueChart />
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+                <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Receita por Hora</h2>
+                <HourlyRevenueChart />
+              </div>
+            </div>
           </div>
         )}
 
-        {activeTab === 'annual' && (
+        {/* Products Tab */}
+        {activeTab === 'products' && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-            <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Faturamento Anual Detalhado</h2>
-            <AnnualRevenueChart />
+            <ProductSalesChart />
           </div>
         )}
 
-        {activeTab === 'hourly' && (
+        {/* Bookings Tab */}
+        {activeTab === 'bookings' && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-            <h2 className="text-lg md:text-2xl font-bold mb-4 md:mb-6">Receita por Hora Detalhado</h2>
-            <HourlyRevenueChart />
+            <BookingsChart />
           </div>
         )}
       </div>

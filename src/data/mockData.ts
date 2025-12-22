@@ -457,3 +457,53 @@ export function getHourlyRevenueData(): HourlyRevenueData[] {
   }
   return hours;
 }
+
+// Product Sales Data
+export interface ProductSalesData {
+  name: string;
+  sales: number;
+  revenue: number;
+}
+
+export function getProductSalesData(): ProductSalesData[] {
+  const productSales = [
+    { name: 'Glow Spray Serum', sales: 45, revenue: 8100 },
+    { name: 'Hydrate Champô', sales: 52, revenue: 9880 },
+    { name: 'Replenish Máscara', sales: 28, revenue: 7840 },
+    { name: 'Hydrate Loção', sales: 38, revenue: 8360 },
+    { name: 'Sérum Suavizante', sales: 32, revenue: 11200 },
+    { name: 'Creme Mãos e Cabelo', sales: 19, revenue: 9120 },
+  ];
+  return productSales;
+}
+
+// Bookings Data
+export interface BookingsData {
+  day: number;
+  bookings: number;
+  completed: number;
+}
+
+export function getMonthlyBookingsData(): BookingsData[] {
+  const now = new Date();
+  const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  
+  const data: BookingsData[] = [];
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dayOfWeek = new Date(now.getFullYear(), now.getMonth(), day).getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    
+    // More bookings on weekends
+    const baseBookings = isWeekend ? 12 : 8;
+    const variation = Math.floor(Math.random() * 4 - 2);
+    const bookings = Math.max(3, baseBookings + variation);
+    const completed = Math.floor(bookings * (0.85 + Math.random() * 0.15));
+    
+    data.push({
+      day,
+      bookings,
+      completed,
+    });
+  }
+  return data;
+}
