@@ -163,7 +163,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
           >
             <div className="relative overflow-hidden rounded-2xl md:rounded-3xl mb-4 aspect-[4/5]">
               <img
-                src="https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/escova-progressiva.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9lc2NvdmEtcHJvZ3Jlc3NpdmEucG5nIiwiaWF0IjoxNzY2MzE2NTk4LCJleHAiOjE3Njg5MDg1OTh9.Zbv-i7Qeu-joR-_UTf1eVVtTmGjsZezzh4uShcNSXLY"
+                src="https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/coloracao-completa.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9jb2xvcmFjYW8tY29tcGxldGEucG5nIiwiaWF0IjoxNzcyMDQwMTMwLCJleHAiOjE4MDM1NzYxMzB9.jIQRwfkNK4C6M08QK3LguAOI_G0jnJaDP_xUD2o7Bz4"
                 alt="Coloração"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
@@ -194,7 +194,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
           >
             <div className="relative overflow-hidden rounded-2xl md:rounded-3xl mb-4 aspect-[4/5]">
               <img
-                src="https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/mechas-balayage.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9tZWNoYXMtYmFsYXlhZ2UucG5nIiwiaWF0IjoxNzY2MzE2NTY3LCJleHAiOjE3Njg5MDg1Njd9.4nm7d8UzKvM0n-xJo-Euv4F9PD0N6wzNO0J4_mH4G3A"
+                src="https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/hidratacao-premium.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9oaWRyYXRhY2FvLXByZW1pdW0ucG5nIiwiaWF0IjoxNzcyMDQwMTUzLCJleHAiOjE4MDM1NzYxNTN9.FXjXBVS_4Ir_EQs72lLbX5tcMeLgOwzVqVNTjoalz94"
                 alt="Tratamentos"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />

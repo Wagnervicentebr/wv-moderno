@@ -1,0 +1,13 @@
+/* Layout 70/30: vídeo e lista de aulas na mesma linha em telas >= 768px */
+@media (min-width: 768px) {
+  .course-lesson-layout-80-20 {
+    display: grid !important;
+    grid-template-columns: 7fr 3fr !important;
+  }
+  .course-lesson-layout-80-20 .course-lesson-video {
+    grid-column: 1;
+  }
+  .course-lesson-layout-80-20 .course-lesson-sidebar {
+    grid-column: 2;
+  }
+}

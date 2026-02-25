@@ -4,6 +4,7 @@ import { CartProvider, useCart } from './contexts/CartContext';
 import { BookingProvider } from './contexts/BookingContext';
 import { OrderProvider } from './contexts/OrderContext';
 import { AdminProvider } from './contexts/AdminContext';
+import { CoursesProvider } from './contexts/CoursesContext';
 import { LoginScreen } from './components/LoginScreen';
 import { Navigation } from './components/Navigation';
 import { HomeScreen } from './components/HomeScreen';
@@ -12,14 +13,23 @@ import { ProductsScreen } from './components/ProductsScreen';
 import { CartScreen } from './components/CartScreen';
 import { ProfileScreen } from './components/ProfileScreen';
 import { AdminScreen } from './components/AdminScreen';
+import { CoursesScreen } from './components/CoursesScreen';
+import { CourseLessonScreen } from './components/CourseLessonScreen';
+import { CourseCheckoutFlow } from './components/CourseCheckoutFlow';
 
-type View = 'home' | 'booking' | 'products' | 'cart' | 'profile' | 'admin';
+type View = 'home' | 'booking' | 'products' | 'cart' | 'profile' | 'admin' | 'courses' | 'course-lesson' | 'course-checkout';
 
 function AppContent() {
   const { user, loading } = useAuth();
   const { itemCount } = useCart();
   const [currentView, setCurrentView] = useState<View>('home');
+  const [navigationParams, setNavigationParams] = useState<{ courseId?: string }>({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleNavigate = (view: View, params?: { courseId?: string }) => {
+    setCurrentView(view);
+    setNavigationParams(params ?? {});
+  };
 
   // Scroll to top whenever the view changes
   useEffect(() => {
@@ -54,7 +64,7 @@ function AppContent() {
 
   return (
     <>
-      <Navigation currentView={currentView} onNavigate={setCurrentView} itemCount={itemCount} />
+      <Navigation currentView={currentView} onNavigate={handleNavigate} itemCount={itemCount} />
       
       {currentView === 'home' && <HomeScreen onNavigate={setCurrentView} />}
       {currentView === 'booking' && <BookingFlow onNavigate={setCurrentView} />}
@@ -62,6 +72,20 @@ function AppContent() {
       {currentView === 'cart' && <CartScreen />}
       {currentView === 'profile' && <ProfileScreen onSignOut={handleSignOut} />}
       {currentView === 'admin' && <AdminScreen onNavigate={setCurrentView} />}
+      {currentView === 'courses' && <CoursesScreen onNavigate={handleNavigate} />}
+      {currentView === 'course-lesson' && navigationParams.courseId && (
+        <CourseLessonScreen
+          courseId={navigationParams.courseId}
+          onBack={() => handleNavigate('courses')}
+        />
+      )}
+      {currentView === 'course-checkout' && navigationParams.courseId && (
+        <CourseCheckoutFlow
+          courseId={navigationParams.courseId}
+          onBack={() => handleNavigate('courses')}
+          onConfirmSuccess={(id) => handleNavigate('course-lesson', { courseId: id })}
+        />
+      )}
     </>
   );
 }
@@ -70,13 +94,15 @@ export default function App() {
   return (
     <AuthProvider>
       <AdminProvider>
-        <BookingProvider>
-          <OrderProvider>
-            <CartProvider>
-              <AppContent />
-            </CartProvider>
-          </OrderProvider>
-        </BookingProvider>
+        <CoursesProvider>
+          <BookingProvider>
+            <OrderProvider>
+              <CartProvider>
+                <AppContent />
+              </CartProvider>
+            </OrderProvider>
+          </BookingProvider>
+        </CoursesProvider>
       </AdminProvider>
     </AuthProvider>
   );

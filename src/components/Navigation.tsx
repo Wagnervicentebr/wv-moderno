@@ -1,10 +1,12 @@
 import React from 'react';
-import { Calendar, ShoppingBag, User, Home, ShoppingCart, TrendingUp } from 'lucide-react';
+import { Calendar, ShoppingBag, User, Home, ShoppingCart, TrendingUp, BookOpen } from 'lucide-react';
 import { useAdmin } from '../contexts/AdminContext';
+
+export type NavView = 'home' | 'booking' | 'products' | 'cart' | 'profile' | 'admin' | 'courses' | 'course-lesson' | 'course-checkout';
 
 interface NavigationProps {
   currentView: string;
-  onNavigate: (view: 'home' | 'booking' | 'products' | 'cart' | 'profile' | 'admin') => void;
+  onNavigate: (view: NavView, params?: { courseId?: string }) => void;
   itemCount: number;
 }
 
@@ -42,7 +44,7 @@ export function Navigation({ currentView, onNavigate, itemCount }: NavigationPro
 
       {/* Mobile Bottom Navigation */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-black/5 z-50 safe-area-bottom">
-        <div className={`grid h-16 ${isAdminMode ? 'grid-cols-5' : 'grid-cols-4'}`}>
+        <div className={`grid h-16 ${isAdminMode ? 'grid-cols-6' : 'grid-cols-5'}`}>
           <button
             onClick={() => onNavigate('home')}
             className={`flex flex-col items-center justify-center gap-1 transition-colors ${
@@ -71,6 +73,16 @@ export function Navigation({ currentView, onNavigate, itemCount }: NavigationPro
           >
             <ShoppingBag className={`w-6 h-6 ${currentView === 'products' ? 'fill-current' : ''}`} />
             <span className="text-xs font-medium">Produtos</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('courses')}
+            className={`flex flex-col items-center justify-center gap-1 transition-colors ${
+              (currentView === 'courses' || currentView === 'course-lesson' || currentView === 'course-checkout') ? 'text-black' : 'text-[rgb(var(--color-text-secondary))]'
+            }`}
+          >
+            <BookOpen className={`w-6 h-6 ${(currentView === 'courses' || currentView === 'course-lesson' || currentView === 'course-checkout') ? 'fill-current' : ''}`} />
+            <span className="text-xs font-medium">Cursos</span>
           </button>
 
           <button
@@ -141,6 +153,17 @@ export function Navigation({ currentView, onNavigate, itemCount }: NavigationPro
                 }`}
               >
                 Produtos
+              </button>
+
+              <button
+                onClick={() => onNavigate('courses')}
+                className={`px-4 py-2 rounded-xl transition-all ${
+                  (currentView === 'courses' || currentView === 'course-lesson' || currentView === 'course-checkout')
+                    ? 'bg-black text-white' 
+                    : 'text-[rgb(var(--color-text-secondary))] hover:bg-gray-100'
+                }`}
+              >
+                Cursos
               </button>
 
               <button

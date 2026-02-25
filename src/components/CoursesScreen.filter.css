@@ -1,0 +1,13 @@
+/* Filtro e busca na mesma linha no desktop: 80% input, 20% select */
+@media (min-width: 768px) {
+  .courses-filter-row {
+    display: grid !important;
+    grid-template-columns: 8fr 2fr !important;
+  }
+  .courses-filter-row .courses-filter-input {
+    grid-column: 1;
+  }
+  .courses-filter-row .courses-filter-select {
+    grid-column: 2;
+  }
+}

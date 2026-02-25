@@ -44,7 +44,7 @@ export const services: Service[] = [
     duration: 45,
     price: 400,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/barba.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vYmFyYmEucG5nIiwiaWF0IjoxNzY2MzE2NjgwLCJleHAiOjE3Njg5MDg2ODB9.2_JJSRiy6sk2wn7cviU4uWnE_D9wgluP4t-2tsYlMYM",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/barba.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vYmFyYmEucG5nIiwiaWF0IjoxNzcyMDM5OTcyLCJleHAiOjE4MDM1NzU5NzJ9.7uL-fnAIVVwKFWf-0QPWWsTuakjvpXQce47uiKrIfrM",
   },
   {
     id: 'm5',
@@ -53,7 +53,7 @@ export const services: Service[] = [
     duration: 60,
     price: 800,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/Visagismo-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vVmlzYWdpc21vLW1hc2N1bGluby5wbmciLCJpYXQiOjE3NjYzMjQ3NjMsImV4cCI6MTc2ODkxNjc2M30.3ITsIoM5nh9I5xYYbNeHCLFUeCtaV54f_04YfTqSSrE",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/Visagismo-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vVmlzYWdpc21vLW1hc2N1bGluby5wbmciLCJpYXQiOjE3NzIwMzk5ODUsImV4cCI6MTgwMzU3NTk4NX0.bcT6Sr8KoNsekhWxRWDl-oKXOpb1H-Xh1eOuOghU_GA",
   },
   {
     id: 'm3',
@@ -62,7 +62,7 @@ export const services: Service[] = [
     duration: 90,
     price: 1100,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/barba-cabelo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vYmFyYmEtY2FiZWxvLnBuZyIsImlhdCI6MTc2NjMxNjcwMiwiZXhwIjoxNzY4OTA4NzAyfQ.HvmYKJpce_Nggv3bT2y6V_HTef4efH0W3kSga0YcZfQ",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/barba-cabelo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vYmFyYmEtY2FiZWxvLnBuZyIsImlhdCI6MTc3MjAzOTkxMywiZXhwIjoxODAzNTc1OTEzfQ.1mbRrY0nUnhvIRAL38hdaLWj003AXU7gR_fOwYO0LSU",
   },
   {
     id: 'm4',
@@ -71,7 +71,7 @@ export const services: Service[] = [
     duration: 45,
     price: 450,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/hidratacao-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vaGlkcmF0YWNhby1tYXNjdWxpbm8ucG5nIiwiaWF0IjoxNzY2MzE2NzExLCJleHAiOjE3Njg5MDg3MTF9.Op_fUewMYacmN2mW7_sUIhXfu35aEKcokChEO-R1ul4",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/hidratacao-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vaGlkcmF0YWNhby1tYXNjdWxpbm8ucG5nIiwiaWF0IjoxNzcyMDM5OTk5LCJleHAiOjE4MDM1NzU5OTl9.XZDRhBV4KvUf-DfIQVrEiXAWJBxEqYE7wdTZ75S-fCU",
   },
   {
     id: 'm1',
@@ -80,7 +80,7 @@ export const services: Service[] = [
     duration: 30,
     price: 250,
     category: 'masculino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/corte-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vY29ydGUtbWFzY3VsaW5vLnBuZyIsImlhdCI6MTc2NjMxNjczMywiZXhwIjoxNzY4OTA4NzMzfQ.njs7lr8Gd-FJnlPSI7cvX6fjeDaHLQfNbJ84XDAVNs0",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/masculino/corte-masculino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYXNjdWxpbm8vY29ydGUtbWFzY3VsaW5vLnBuZyIsImlhdCI6MTc3MjA0MDAzOSwiZXhwIjoxODAzNTc2MDM5fQ.L14Wg2aMAIONq2LWOWbpSZqz8fWzIYS7RGlep9arMGw",
   },
   
 
@@ -92,7 +92,7 @@ export const services: Service[] = [
     duration: 90,
     price: 1200,
     category: 'feminino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/corte-feminino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9jb3J0ZS1mZW1pbmluby5wbmciLCJpYXQiOjE3NjYzMTY2MTEsImV4cCI6MTc2ODkwODYxMX0.YiEULVReLoRdzEOkqJbX3gzwsHHSSxY8lFm6wl0SaEo"
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/corte-feminino.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9jb3J0ZS1mZW1pbmluby5wbmciLCJpYXQiOjE3NzIwNDAwNzcsImV4cCI6MTgwMzU3NjA3N30.Ycaocmdn5_PBTgmTzEB54OjTGhnKHvbMvmE8ANZlnGc"
   },
   {
     id: 'f2',
@@ -101,7 +101,7 @@ export const services: Service[] = [
     duration: 180,
     price: 2500,
     category: 'feminino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/escova-progressiva.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9lc2NvdmEtcHJvZ3Jlc3NpdmEucG5nIiwiaWF0IjoxNzY2MzE2NTk4LCJleHAiOjE3Njg5MDg1OTh9.Zbv-i7Qeu-joR-_UTf1eVVtTmGjsZezzh4uShcNSXLY"
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/escova-progressiva.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9lc2NvdmEtcHJvZ3Jlc3NpdmEucG5nIiwiaWF0IjoxNzcyMDQwMTE1LCJleHAiOjE4MDM1NzYxMTV9.qGPVc1u-N7tV13I0vSJ76vOxPq2_-Kf1pet-bKBsPrQ"
   },
   {
     id: 'f3',
@@ -110,7 +110,7 @@ export const services: Service[] = [
     duration: 150,
     price: 1800,
     category: 'feminino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/coloracao-completa.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9jb2xvcmFjYW8tY29tcGxldGEucG5nIiwiaWF0IjoxNzY2MzE2NjI0LCJleHAiOjE3Njg5MDg2MjR9.PJxypQ_MRYB1XXPG0M0CoXTM39tS6PvkaGMd_Rtdf48"
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/coloracao-completa.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9jb2xvcmFjYW8tY29tcGxldGEucG5nIiwiaWF0IjoxNzcyMDQwMTMwLCJleHAiOjE4MDM1NzYxMzB9.jIQRwfkNK4C6M08QK3LguAOI_G0jnJaDP_xUD2o7Bz4"
   },
   {
     id: 'f4',
@@ -119,7 +119,7 @@ export const services: Service[] = [
     duration: 180,
     price: 2200,
     category: 'feminino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/mechas-balayage.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9tZWNoYXMtYmFsYXlhZ2UucG5nIiwiaWF0IjoxNzY2MzE2NTY3LCJleHAiOjE3Njg5MDg1Njd9.4nm7d8UzKvM0n-xJo-Euv4F9PD0N6wzNO0J4_mH4G3A",
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/mechas-balayage.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9tZWNoYXMtYmFsYXlhZ2UucG5nIiwiaWF0IjoxNzcyMDQwMTQyLCJleHAiOjE4MDM1NzYxNDJ9.0ZT_qNluu_XPTyi1RPvxt1uOpa_13JsL3juMYsO43ZM"
   },
   {
     id: 'f5',
@@ -128,7 +128,7 @@ export const services: Service[] = [
     duration: 60,
     price: 600,
     category: 'feminino',
-    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/hidratacao-premium.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9oaWRyYXRhY2FvLXByZW1pdW0ucG5nIiwiaWF0IjoxNzY2MzE2NTgwLCJleHAiOjE3Njg5MDg1ODB9.SBHycqtYuCGQRTDiBYGTau1wgagSZ6784OPhIFDsF6U"
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/hidratacao-premium.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9oaWRyYXRhY2FvLXByZW1pdW0ucG5nIiwiaWF0IjoxNzcyMDQwMTUzLCJleHAiOjE4MDM1NzYxNTN9.FXjXBVS_4Ir_EQs72lLbX5tcMeLgOwzVqVNTjoalz94"
   },
   {
     id: 'f6',
@@ -137,7 +137,7 @@ export const services: Service[] = [
     duration: 120,
     price: 1500,
     category: 'feminino',
-    image: 'https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/penteado-eventos.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9wZW50ZWFkby1ldmVudG9zLnBuZyIsImlhdCI6MTc2NjMxNjQ3MCwiZXhwIjoxNzY4OTA4NDcwfQ.oiKwdTJx3k2KalUZwksOgPcStPk6YyQAmhmcqmRL65Y',
+    image: "https://lgfrnhhlutwahptczwko.supabase.co/storage/v1/object/sign/Feminino/penteado-eventos.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjA0NDY4Ny01ZjFhLTQwMDYtOGMzMC0zYTkxYmE5MjRkYmEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGZW1pbmluby9wZW50ZWFkby1ldmVudG9zLnBuZyIsImlhdCI6MTc3MjA0MDE2NSwiZXhwIjoxODAzNTc2MTY1fQ.EUxFIsYfG_Z7CmibPUm6asTMYdiPwRdzGyIRESrTsvQ"
   },
 
   // MAQUIAGEM
